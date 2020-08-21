@@ -10,9 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: GraphQLProvider(
-          child: MyHomePage(),
-      ),
+      home: MyHomePage(),
     );
   }
 }
