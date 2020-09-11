@@ -1,3 +1,4 @@
+import 'package:back4appgraphqldemo/main.dart';
 import 'package:flutter/material.dart';
 
 class AppUI extends StatefulWidget {
@@ -26,6 +27,26 @@ class _AppUIState extends State<AppUI> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Mutation Page'),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: 'query_page',
+            child: Text('Q',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: (){
+              Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: ((context){
+                    return MyApp();
+                  })
+              ));
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
