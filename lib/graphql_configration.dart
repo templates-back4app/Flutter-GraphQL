@@ -1,9 +1,5 @@
-import 'package:back4appgraphqldemo/consonents.dart';
-import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'consonents.dart';
-
+import 'constants.dart';
 
 class GraphQlConfiguration {
 
