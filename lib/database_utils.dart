@@ -116,19 +116,9 @@ class DatabaseUtils{
    //code for add/update Geopointers
  }
 
- Future<QueryResult> deleteGeoPointers(String rowObjectId, String latitude, String longitude) async{
-   print('deleteGeoPointers');
-   //code for delete geopointers
- }
-
  Future<QueryResult> addDateTime(String rowObjectId, String dateTime) async{
    print('addDateTime');
    //code for add/update date-time
- }
-
- Future<QueryResult> deleteDateTime(String rowObjectId, String dateTime) async{
-   print('deleteDateTime');
-   //code for delete date-time
  }
 
 }
