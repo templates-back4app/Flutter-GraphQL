@@ -97,27 +97,7 @@ class _AddDateTimeState extends State<AddDateTime> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.0),
-              child: FlatButton(
-                color: Colors.green,
-                onPressed: (){
-                  utils = DatabaseUtils();
-                  utils.addDateTime(
-                      objectIdController.text.trim(),
-                      dateTime.text.trim()
-                  );
-                },
-                child: Center(
-                  child: Text(
-                    'Delete',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            
           ],
         ),
       ),
