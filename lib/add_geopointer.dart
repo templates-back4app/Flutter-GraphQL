@@ -130,27 +130,7 @@ class _AddGeoPointerState extends State<AddGeoPointer> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.0),
-              child: FlatButton(
-                color: Colors.green,
-                onPressed: () {
-                  utils = DatabaseUtils();
-                  utils.deleteGeoPointers(
-                      objectIdController.text.trim(),
-                      latitudeController.text.trim(),
-                      longitudeController.text.trim());
-                },
-                child: Center(
-                  child: Text(
-                    'Delete',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            
           ],
         ),
       ),
