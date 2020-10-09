@@ -1,3 +1,4 @@
+import 'package:back4appgraphqldemo/mutation_options.dart';
 import 'package:back4appgraphqldemo/main.dart';
 import 'package:flutter/material.dart';
 
@@ -32,18 +33,36 @@ class _AppUIState extends State<AppUI> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+              heroTag: 'complex_mutation',
+              child: Text(
+                'CM',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context)=>ComplexMutationPage()
+                ),);
+              }),
+          SizedBox(
+            width: 10.0,
+          ),
+          FloatingActionButton(
             heroTag: 'query_page',
-            child: Text('Q',
+            child: Text(
+              'Q',
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
-            onPressed: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(
-                  builder: ((context){
-                    return MyApp();
-                  })
-              ));
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: ((context) {
+                  return MyApp();
+                }),),
+              );
             },
           ),
         ],
