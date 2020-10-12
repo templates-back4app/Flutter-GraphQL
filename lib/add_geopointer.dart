@@ -130,7 +130,6 @@ class _AddGeoPointerState extends State<AddGeoPointer> {
                 ),
               ),
             ),
-            
           ],
         ),
       ),

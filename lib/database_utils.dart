@@ -91,6 +91,15 @@ class DatabaseUtils{
    return queryResult;
  }
 
+  Future<QueryResult> addPointers(String rowObjectId, String pointersId) async{
+    print('addPointers');
+    //code for add/update Pointers
+  }
+
+  Future<QueryResult> deletePointers(String rowObjectId, String pointersId) async{
+    //code for delete Pointer.
+    print('delete Pinters');
+  }
  Future<QueryResult> addRelation(String rowObjectId, String relationId) async{
    //code for add/update Relation.
    print('addRelation');
@@ -99,16 +108,6 @@ class DatabaseUtils{
  Future<QueryResult> deleteRelation(String rowObjectId, String relationId) async{
    print('deleteRelation');
    //code for delete Relation
- }
-
- Future<QueryResult> addPointers(String rowObjectId, String PointersId) async{
-   print('addPointers');
-   //code for add/update Pointers
- }
-
- Future<QueryResult> deletePointers(String rowObjectId, String PointersId) async{
-   print('deletePointers');
-   //code for delete pointers
  }
 
  Future<QueryResult> addGeoPointers(String rowObjectId, String latitude, String longitude) async{

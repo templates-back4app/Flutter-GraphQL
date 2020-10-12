@@ -1,7 +1,7 @@
 import 'package:back4appgraphqldemo/mutation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'consonents.dart';
+import 'constants.dart';
 import 'dart:ui';
 
 void main() {
@@ -105,7 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 "Loading...",
                 style: TextStyle(fontSize: 20.0),
               ));
-            } else {
+            } else if(result.data.isEmpty){
+              return Center(
+                  child: Text(
+                    "No data available",
+                    style: TextStyle(fontSize: 20.0),
+                  ));
+            }
+              else {
               return ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
