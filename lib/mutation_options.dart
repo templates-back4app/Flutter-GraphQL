@@ -21,25 +21,6 @@ class ComplexMutationPage extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.green,
                   onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context)=>AddRelation()
-                      ),);
-                  },
-                  child: Center(
-                    child: Text(
-                      'Add Relation',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context)=>AddPointer()
                     ),);
@@ -54,6 +35,26 @@ class ComplexMutationPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.all(15.0),
+                child: FlatButton(
+                  color: Colors.green,
+                  onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context)=>AddRelation()
+                      ),);
+                  },
+                  child: Center(
+                    child: Text(
+                      'Add Relation',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
               Padding(
                 padding: EdgeInsets.all(15.0),
                 child: FlatButton(
