@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'constants.dart';
 import 'dart:ui';
+import 'dart:developer';
 
 void main() {
   runApp(MyApp());
@@ -11,12 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HttpLink httpLink = HttpLink(
-      uri: 'https://parseapi.back4app.com/graphql',
+      uri: kParseApiUrl,
       headers: {
         'X-Parse-Application-Id': kParseApplicationId,
         'X-Parse-Client-Key': kParseClientKey,
-        'X-Parse-Master-Key': kParseMasterKey,
-        //'X-Parse-REST-API-Key' : kParseRestApiKey,
+        'X-Parse-REST-API-Key': kParseRestApiKey
       }, //getheaders()
     );
 
@@ -47,17 +47,17 @@ class _MyHomePageState extends State<MyHomePage> {
   String objectId;
 
   String query = '''
-  query FindLanguages{
-  languages{
-    count,
-    edges{
-      node{
-        name,
-        saveFormat
+    query {
+      programmingLanguages {
+        edges {
+          node {
+            id
+            name
+            stronglyTyped
+          }
+        }
       }
     }
-  }
-}
   ''';
 
   @override
@@ -78,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Refetch refetch,
             FetchMore fetchMore,
           }) {
+            print(result.exception);
             if (result.data == null) {
               return Center(
                   child: Text(
@@ -88,14 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
               return ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text(result.data["languages"]["edges"][index]["node"]
-                        ['name']),
-                    trailing: Text(result.data["languages"]["edges"][index]
-                        ["node"]['saveFormat']),
-
+                    title: Text(result.data["programmingLanguages"]["edges"]
+                        [index]["node"]['name']),
+                    trailing: Text(result.data["programmingLanguages"]["edges"]
+                            [index]["node"]['stronglyTyped']
+                        ? "Strongly Typed"
+                        : "Weekly Typed"),
                   );
                 },
-                itemCount: result.data["languages"]["edges"].length,
+                itemCount: result.data["programmingLanguages"]["edges"].length,
               );
             }
           },
