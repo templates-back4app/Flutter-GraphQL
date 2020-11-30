@@ -10,8 +10,8 @@ class GraphQlConfiguration {
      headers: {
       'X-Parse-Application-Id' : kParseApplicationId,
       'X-Parse-Client-Key' : kParseClientKey,
-      'X-Parse-Master-Key': kParseMasterKey,
-      //'X-Parse-REST-API-Key' : kParseRestApiKey,
+      // 'X-Parse-Master-Key': kParseMasterKey,
+      'X-Parse-REST-API-Key' : kParseRestApiKey,
     },
    );
 
