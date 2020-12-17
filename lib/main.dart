@@ -29,15 +29,6 @@ class MyApp extends StatelessWidget {
         link: httpLink,
       ),
     );
-    // return GraphQLProvider(
-    //   client: client,
-    //   child: CacheProvider(
-    //     child: MaterialApp(
-    //       home:  MyHomePage(),
-
-    //     ),
-    //   ),
-    // );
     return MaterialApp(
       home: GraphQLProvider(
         child: CacheProvider(
