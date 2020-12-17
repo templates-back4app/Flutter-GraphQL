@@ -140,14 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class SharedPreferencesHelper {
-  ///
-  /// Instantiation of the SharedPreferences library
-  ///
+
   static final String _offline_cache_key = 'programmingLanguageListResponse';
 
-  /// ------------------------------------------------------------
-  /// Method that returns the user language code, 'en' if not set
-  /// ------------------------------------------------------------
   static Future<ProgrammingLanguageList> getCache() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final cache = prefs.getString(_offline_cache_key);
@@ -156,10 +151,6 @@ class SharedPreferencesHelper {
 
     return offlineData;
   }
-
-  /// ----------------------------------------------------------
-  /// Method that saves the user language code
-  /// ----------------------------------------------------------
   static Future<bool> setCache(dynamic value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
