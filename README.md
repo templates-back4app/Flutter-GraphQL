@@ -1,6 +1,6 @@
 # back4appgraphqldemo
 
-Flutter-Back4app Connection Template 
+A new Flutter application.
 
 ## Getting Started
 
